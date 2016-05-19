@@ -4,4 +4,8 @@ http://www.flashbynight.com/tutes/hangmanhtml5/example/
 Exemplo 2 (bonito layout) :
 https://www.barryfunenglish.com/games/hangman
 
+Exemplo 3 (tem a opção de clicar na letra ou preencher um input com a letra) :
+http://www.soportugues.com.br/secoes/jogos/forca/forca.html
+
+
 Procurando mais...
