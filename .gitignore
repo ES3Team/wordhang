@@ -1,8 +1,1 @@
 /target/
-/build/
-/bin/
-
-/nbproject/
-.settings/
-build.xml
-nb-configuration.xml
