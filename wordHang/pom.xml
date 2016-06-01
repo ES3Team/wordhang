@@ -2,20 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ESIIITeam</groupId>
-    <artifactId>wordhang</artifactId>
+    <groupId>ES3Team</groupId>
+    <artifactId>wordHang</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>wordhang</name>
+    <name>wordHang</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <hibernate.version>4.2.6.Final</hibernate.version>
     </properties>
-       
-    <dependencies>    
+    
+    <dependencies>
         <!-- Java EE Versão 7.0 -->
         <dependency>
             <groupId>javax</groupId>
@@ -59,8 +59,6 @@
             <artifactId>postgresql</artifactId>
             <version>9.3-1102-jdbc41</version>
         </dependency>
-
-
     </dependencies>
 
     <build>
