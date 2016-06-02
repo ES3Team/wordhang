@@ -2,4 +2,5 @@ machine:
   java:
     version: openjdk7
 	
-mvn cobertura:cobertura coveralls:report
+after_success:
+  - mvn clean test jacoco:report coveralls:report
