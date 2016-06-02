@@ -108,6 +108,29 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--Plugin do Coveralls -->
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>4.2.0</version>
+                <configuration>
+                    <repoToken>k4pjmLF1RUHCrrfHSyTKO4toGvrszr6wv</repoToken>
+                </configuration>
+            </plugin>
+            <!--Plugin do JaCoCo necessário ao Coveralls -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.6.201602180812</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
