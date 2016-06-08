@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>WordHang</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/theme.css">
+
+        <script type="text/javascript">
+            function id(el) {
+                return document.getElementById(el);
+            }
+            function val(destino, valor) {
+                destino.value += valor;
+            }
+            var focus = false;
+            window.onload = function () {
+
+
+                var botoes = id('teclado').getElementsByTagName('input');
+                for (var i = 0; i < botoes.length; i++) {
+                    botoes[i].onclick = function () {
+                        if (!focus) {
+                            alert('coloque o foco em algum input');
+                            exit();
+                        }
+
+                        val(id(focus), this.value);
+                        id(focus).focus();
+                    }
+                }
+
+                var inputs = id('area').getElementsByTagName('input');
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].onfocus = function () {
+                        focus = this.id;
+                    }
+                }
+                id('entrada_1').focus();
+            }
+        </script>
+        <style type="text/css">
+            * { margin: 0; padding: 0; border: 0; }
+            input { background: #fff !important; border: 1px solid #ccc !important; padding: 2px !important;}
+            #teclado { width: 100%; }
+            #teclado fieldset { width: 300px !important; text-align: center !important; float: left !important; margin: 2px !important; }
+            #teclado #numbers { float: right !important; width: 80px !important; }
+            fieldset { margin: 5px !important; }
+        </style>
+    </head>
+    <body role="document">
+
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Bootstrap theme</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div class="container theme-showcase" role="main">
+
+            <div class="jumbotron">
+                <h1 class="text-align-center">WORDHANG</h1>
+            </div>
+
+            <div class="jumbotron" style="background-color: #eee">
+                <div class="row">
+                    <!--<div class="col-md-8 col-lg-8 col-xs-8 col-md-offset-2 col-lg-offset-2 col-xs-offset-2">-->
+                    <div class="col-md-3 col-lg-3 col-xs-3">
+                        <a href="">Dica</a>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xs-6">
+                        <p class="text-align-center">Palavra Secreta</p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xs-3">
+                        <p class="float-right">s2 / s2 / s2</p>
+                    </div>
+                    <!--</div>-->
+                </div>
+                <div class="row" style="background-color: #f5f5f5; margin-top: 50px">
+                    <div class="col-md-8 col-lg-8 col-xs-8 col-md-offset-2 col-lg-offset-2 col-xs-offset-2">
+                        <img src="https://i.ytimg.com/vi/Cz_XFY6CZ1c/maxresdefault.jpg"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="jumbotron">
+                <form action="" method="post">
+                    <fieldset id="area">
+                        <input type="text" name="entrada_1" id="entrada_1" /></label>
+                        <input type="text" name="entrada_2" id="entrada_2" /></label>
+                        <input type="text" name="entrada_3" id="entrada_3" /></label>
+                    </fieldset>
+                    <fieldset id="teclado">
+                        <fieldset>
+                            <input type="button" name="q" value="q" />
+                            <input type="button" name="w" value="w" />
+                            <input type="button" name="e" value="e" />
+                            <input type="button" name="r" value="r" />
+                            <input type="button" name="t" value="t" />
+                            <input type="button" name="y" value="y" />
+                            <input type="button" name="u" value="u" />
+                            <input type="button" name="i" value="i" />
+                            <input type="button" name="o" value="o" />
+                            <input type="button" name="p" value="p" />
+                        </fieldset>
+                        <fieldset>
+                            <input type="button" name="a" value="a" />
+                            <input type="button" name="s" value="s" />
+                            <input type="button" name="d" value="d" />
+                            <input type="button" name="f" value="f" />
+                            <input type="button" name="g" value="g" />
+                            <input type="button" name="h" value="h" />
+                            <input type="button" name="j" value="j" />
+                            <input type="button" name="k" value="k" />
+                            <input type="button" name="l" value="l" />
+                            <input type="button" name="ç" value="ç" />
+                        </fieldset>
+                        <fieldset>                      
+                            <input type="button" name="z" value="z" />
+                            <input type="button" name="x" value="x" />
+                            <input type="button" name="c" value="c" />
+                            <input type="button" name="v" value="v" />                      
+                            <input type="button" name="b" value="b" />
+                            <input type="button" name="n" value="n" />
+                            <input type="button" name="m" value="m" />
+                        </fieldset>
+                    </fieldset>
+                </form>
+
+            </div>
+
+        </div> <!-- /container -->
+
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">Copyright 2016 - Engenharia de Software 3</p>
+            </div>
+        </footer>
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/docs.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>
