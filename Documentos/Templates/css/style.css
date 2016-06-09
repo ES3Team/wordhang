@@ -2968,3 +2968,18 @@ code {
 .font-palavra-secreta{
     font-size: 40px !important;
 }
+
+.msg1{
+  font-family: Verdana;
+  color: #1a1100;
+  background: #ffcc66;
+}
+
+.dismiss-button{
+  background: #ffffff;
+  border-radius: 5px;
+  font-family: Verdana;
+  font-size: 13px;
+  color: #1a1100;
+  height: 30px;
+}s
