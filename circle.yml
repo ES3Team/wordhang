@@ -1,6 +1,3 @@
 machine:
-  java:
-    version: openjdk7
-	
-after_success:
- - mvn clean test jacoco:report coveralls:report
+  php:
+    version: 5.4.5
