@@ -2969,7 +2969,6 @@ code {
     font-size: 40px !important;
 }
 
-<<<<<<< HEAD
 @font-face {
     font-family: 'eraserregular';
     src: url('EraserRegular-webfont.eot');
@@ -2989,7 +2988,7 @@ code {
 .font-size-dica{
     font-size: 25px !important;
 }
-=======
+
 .msg1{
   font-family: Verdana;
   color: #1a1100;
@@ -3003,5 +3002,4 @@ code {
   font-size: 13px;
   color: #1a1100;
   height: 30px;
-}s
->>>>>>> d49db45689791916571e074f50c9e820cd2dc4c7
+}
