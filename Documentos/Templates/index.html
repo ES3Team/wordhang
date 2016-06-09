@@ -13,6 +13,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/theme.css">
+		<link rel="stylesheet" type="text/css" href="css/kbStyle.css">
 
         <script type="text/javascript">
             function id(el) {
@@ -119,51 +120,54 @@ and open the template in the editor.
                 </div>
             </div>
 
-            <div class="jumbotron">
-                <form action="" method="post">
-                    <fieldset id="area">
-                        <input type="text" name="entrada_1" id="entrada_1" /></label>
-                        <input type="text" name="entrada_2" id="entrada_2" /></label>
-                        <input type="text" name="entrada_3" id="entrada_3" /></label>
-                    </fieldset>
-                    <fieldset id="teclado">
-                        <fieldset>
-                            <input type="button" name="q" value="q" />
-                            <input type="button" name="w" value="w" />
-                            <input type="button" name="e" value="e" />
-                            <input type="button" name="r" value="r" />
-                            <input type="button" name="t" value="t" />
-                            <input type="button" name="y" value="y" />
-                            <input type="button" name="u" value="u" />
-                            <input type="button" name="i" value="i" />
-                            <input type="button" name="o" value="o" />
-                            <input type="button" name="p" value="p" />
-                        </fieldset>
-                        <fieldset>
-                            <input type="button" name="a" value="a" />
-                            <input type="button" name="s" value="s" />
-                            <input type="button" name="d" value="d" />
-                            <input type="button" name="f" value="f" />
-                            <input type="button" name="g" value="g" />
-                            <input type="button" name="h" value="h" />
-                            <input type="button" name="j" value="j" />
-                            <input type="button" name="k" value="k" />
-                            <input type="button" name="l" value="l" />
-                            <input type="button" name="ç" value="ç" />
-                        </fieldset>
-                        <fieldset>                      
-                            <input type="button" name="z" value="z" />
-                            <input type="button" name="x" value="x" />
-                            <input type="button" name="c" value="c" />
-                            <input type="button" name="v" value="v" />                      
-                            <input type="button" name="b" value="b" />
-                            <input type="button" name="n" value="n" />
-                            <input type="button" name="m" value="m" />
-                        </fieldset>
-                    </fieldset>
-                </form>
-
-            </div>
+<div id="container">
+    <ul id="keyboard">
+        
+        <li class="tab">tab</li>
+        <li class="letter">q</li>
+        <li class="letter">w</li>
+        <li class="letter">e</li>
+        <li class="letter">r</li>
+        <li class="letter">t</li>
+        <li class="letter">y</li>
+        <li class="letter">u</li>
+        <li class="letter">i</li>
+        <li class="letter">o</li>
+        <li class="letter">p</li>
+        <li class="symbol"><span class="off">[</span><span class="on">{</span></li>
+        <li class="symbol"><span class="off">]</span><span class="on">}</span></li>
+        <li class="symbol lastitem"><span class="off">\</span><span class="on">|</span></li>
+        <li class="capslock">caps lock</li>
+        <li class="letter">a</li>
+        <li class="letter">s</li>
+        <li class="letter">d</li>
+        <li class="letter">f</li>
+        <li class="letter">g</li>
+        <li class="letter">h</li>
+        <li class="letter">j</li>
+        <li class="letter">k</li>
+        <li class="letter">l</li>
+        <li class="symbol"><span class="off">;</span><span class="on">:</span></li>
+        <li class="symbol"><span class="off">'</span><span class="on">&quot;</span></li>
+        <li class="return lastitem">return</li>
+        <li class="left-shift">shift</li>
+        <li class="letter">z</li>
+        <li class="letter">x</li>
+        <li class="letter">c</li>
+        <li class="letter">v</li>
+        <li class="letter">b</li>
+        <li class="letter">n</li>
+        <li class="letter">m</li>
+        <li class="symbol"><span class="off">,</span><span class="on">&lt;</span></li>
+        <li class="symbol"><span class="off">.</span><span class="on">&gt;</span></li>
+        <li class="symbol"><span class="off">/</span><span class="on">?</span></li>
+        <li class="right-shift lastitem">shift</li>
+        <li class="space lastitem" style="width:96%">&nbsp;</li>
+    </ul>
+</div>
+ 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/keyboard.js"></script>
 
         </div> <!-- /container -->
 
