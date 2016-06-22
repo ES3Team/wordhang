@@ -3,12 +3,12 @@ margin: 0;
 padding: 0;
 }
 body {
-font: 71%/1.5 Verdana, Sans-Serif;
-background: #eee;
+font: 125%/1.5 Verdana, Sans-Serif;
+background: transparent;
 }
 #container {
 margin: 100px auto;
-width: 688px;
+width: 590px;
 }
 #write {
 margin: 0 0 5px;
@@ -33,7 +33,7 @@ list-style: none;
     height: 40px;
     line-height: 40px;
     text-align: center;
-    background: #fff;
+    background: transparent;
     border: 1px solid #f9f9f9;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;

@@ -177,8 +177,8 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 body {
     font: 18px/30px "Lato", sans-serif;
     font-weight: 300;
-    background-color: #fff;		
-    color: #808080;
+    background-color: #transparent;		
+    color: #fff;
 }
 
 a {
@@ -2917,7 +2917,7 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     background: url('../images/background.jpg') !important;
-    background-size: contain !important;
+    background-size: cover !important;
 }
 .footer {
     position: absolute;
@@ -3002,4 +3002,43 @@ code {
   font-size: 13px;
   color: #1a1100;
   height: 30px;
+}
+
+/*Coração Apaixonado do Rafael*/
+#heart {  
+    position: relative;  
+}  
+#heart:before, #heart:after {  
+    position: absolute;  
+    content: "";  
+    left: 20px;  
+    top: 0;  
+    width: 20px;  
+    height: 35px;  
+    background: red;  
+    -moz-border-radius: 50px 50px 0 0;  
+    border-radius: 50px 50px 0 0;  
+    -webkit-transform: rotate(-45deg);  
+    -moz-transform: rotate(-45deg);  
+    -ms-transform: rotate(-45deg);  
+    -o-transform: rotate(-45deg);  
+    transform: rotate(-45deg);  
+    -webkit-transform-origin: 0 100%;  
+    -moz-transform-origin: 0 100%;  
+    -ms-transform-origin: 0 100%;  
+    -o-transform-origin: 0 100%;  
+    transform-origin: 0 100%;  
+}  
+#heart:after {  
+    left: 0;  
+    -webkit-transform: rotate(45deg);  
+    -moz-transform: rotate(45deg);  
+    -ms-transform: rotate(45deg);  
+    -o-transform: rotate(45deg);  
+    transform: rotate(45deg);  
+    -webkit-transform-origin: 100% 100%;  
+    -moz-transform-origin: 100% 100%;  
+    -ms-transform-origin: 100% 100%;  
+    -o-transform-origin: 100% 100%;  
+    transform-origin : 100% 100%;  
 }
