@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{% trans %}vet.vets{% endtrans %} Feed</title>
+    <subtitle>Vetinarians of PHP Petclinic</subtitle>
+    <link href="{{ path('vet', {'_format':'atom'}) }}" rel="self"/>
+    <link href="{{ path('vet') }}" />
+    <updated>{{ lastUpdated }}</updated>
+    <author><name>Thomas Wöhlke</name></author>
+    <id>{{ feedId }}</id>
+
+    {% for entity in entities %}
+    <entry>
+        <title>{{ entity.firstName| raw }} {{ entity.lastName | raw}}</title>
+        <link href="{{ path('vet_show', {'id': entity.id  }) }}" />
+        <id>{{ entity.id }}</id>
+        <updated>{{ lastUpdated }}</updated>
+        <summary>Specialties: {% for specialty in entity.specialties %}{{ specialty }} {% endfor %}</summary>
+        <author><name>Thomas Wöhlke</name></author>
+    </entry>
+    {% endfor %}
+
+</feed>

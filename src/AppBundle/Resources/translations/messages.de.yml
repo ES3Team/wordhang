@@ -1,0 +1,47 @@
+Previous: zurück
+Next: nächstes
+create.new: hinzufügen
+actions: Aktionen
+edit: ändern
+show: anzeigen
+Delete: Löschen
+Update: Aktualisieren
+Create: Hinzufügen
+language:
+  switcher: Sprache einstellen
+  en: Englisch
+  de: Deutsch
+Owner: Besitzer
+Id: Id
+First name: Vorname
+Last name: Nachname
+Address: Adresse
+City: Stadt
+Telephone: Telefon
+add:
+  pet: Haustier hinzufügen
+  visit: Besuch hinzufügen
+pet:
+  pet: Haustier
+  pets: Haustiere
+Birthdate: Geburtstag
+Pet type: Tierart
+pettype:
+  pettype: Tierart
+  pettypes: Tierarten
+Name: Name
+vet:
+  vet: Tierarzt
+  vets: Tierärzte
+visit:
+  visit: Besuch
+  visits: Besuche
+Description: Beschreibung
+Date: Datum
+specialty:
+  specialty: Fachrichtung
+  specialties: Fachrichtungen
+back:
+  to:
+    list: Zurück zur Liste
+    owner: Zurück zum Besitzer

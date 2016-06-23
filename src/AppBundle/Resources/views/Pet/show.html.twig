@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block title -%}{% trans %}pet.pet{% endtrans %}{% endblock %}
+
+{% block body -%}
+    <h1>{% trans %}pet.pet{% endtrans %}</h1>
+
+    <table class="record_properties table table-striped">
+        <tbody>
+            <tr>
+                <th>{% trans %}Id{% endtrans %}</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Name{% endtrans %}</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Birthdate{% endtrans %}</th>
+                <td>{{ entity.birthdate|date('d.m.Y') }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}pettype.pettype{% endtrans %}</th>
+                <td>{% if entity.petType %}{{ entity.petType.name }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Owner{% endtrans %}</th>
+                <td>{% if entity.owner %}{{ entity.owner.firstName }} {{ entity.owner.lastName }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+            <li>
+                <a href="{{ path('owner_show',{ 'id': entity.owner.id }) }}">
+                    <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+                    {% trans %}back.to.owner{% endtrans %}
+                </a>
+            </li>
+    <li>
+        <a href="{{ path('pet') }}">
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+            {% trans %}back.to.list{% endtrans %}
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('pet_edit', { 'id': entity.id }) }}">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {% trans %}edit{% endtrans %}
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

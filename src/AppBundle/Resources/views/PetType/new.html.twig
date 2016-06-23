@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block title -%}{% trans %}pettype.pettype{% endtrans %}{% endblock %}
+
+{% block body -%}
+    <h1>{% trans %}pettype.pettype{% endtrans %} {% trans %}create.new{% endtrans %}</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('pettype') }}">
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span> {% trans %}back.to.list{% endtrans %}
+        </a>
+    </li>
+</ul>
+{% endblock %}

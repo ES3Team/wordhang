@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block title -%}{% trans %}Owner{% endtrans %}{% endblock %}
+
+{% block body -%}
+    <h1>{% trans %}Owner{% endtrans %} {% trans %}create.new{% endtrans %}</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('owner') }}">
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span> {% trans %}back.to.list{% endtrans %}
+        </a>
+    </li>
+</ul>
+{% endblock %}

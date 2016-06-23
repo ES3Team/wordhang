@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <vets>
+        {% for entity in entities %}
+            <vet>
+                <id>{{ entity.id }}</id>
+                <firstName>{{ entity.firstName }}</firstName>
+                <lastName>{{ entity.lastName }}</lastName>
+                <specialties>
+                {% for specialty in entity.specialties %}
+                    <specialty>
+                    {{ specialty }}
+                    </specialty>
+                {% endfor %}
+                </specialties>
+            </vet>
+        {% endfor %}
+    </vets>
+</entities>

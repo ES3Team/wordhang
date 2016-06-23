@@ -1,0 +1,74 @@
+{% extends '::base.html.twig' %}
+
+{% block title -%}{% trans %}vet.vet{% endtrans %}{% endblock %}
+
+{% block body -%}
+    <h1>{% trans %}vet.vets{% endtrans %}</h1>
+
+    {# total items count #}
+    <div class="count">
+        {{ pagination.getTotalItemCount }}
+    </div>
+
+    <table class="records_list table table-striped">
+        <thead>
+            <tr>
+                <th>{% trans %}Id{% endtrans %}</th>
+                <th>{% trans %}First name{% endtrans %}</th>
+                <th>{% trans %}Last name{% endtrans %}</th>
+                <th>{% trans %}specialty.specialties{% endtrans %}</th>
+                <th>{% trans %}actions{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pagination %}
+            <tr>
+                <td><a href="{{ path('vet_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.firstName }}</td>
+                <td>{{ entity.lastName }}</td>
+                <td>{% for specialty in entity.specialties %}{{ specialty }} {% endfor %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('vet_show', { 'id': entity.id }) }}">
+                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                            {% trans %}show{% endtrans %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('vet_edit', { 'id': entity.id }) }}">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            {% trans %}edit{% endtrans %}
+                        </a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+        <ul>
+        <li>
+            <a href="{{ path('vet_new') }}">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                {% trans %}vet.vet{% endtrans %} {% trans %}create.new{% endtrans %}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('vet', {'_format':'xml'}) }}">
+                <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> XML
+            </a>
+        </li>
+            <li>
+                <a href="{{ path('vet', {'_format':'atom'}) }}">
+                    <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> Atom Feed
+                </a>
+            </li>
+    </ul>
+    {% endblock %}

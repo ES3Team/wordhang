@@ -1,0 +1,105 @@
+{% extends '::base.html.twig' %}
+
+{% block title -%}{% trans %}Owner{% endtrans %}{% endblock %}
+
+{% block body -%}
+    <h1>{% trans %}Owner{% endtrans %}</h1>
+
+    <table class="record_properties table table-striped">
+        <tbody>
+            <tr>
+                <th>{% trans %}Id{% endtrans %}</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}First name{% endtrans %}</th>
+                <td>{{ entity.firstName }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Last name{% endtrans %}</th>
+                <td>{{ entity.lastName }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Address{% endtrans %}</th>
+                <td>{{ entity.address }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}City{% endtrans %}</th>
+                <td>{{ entity.city }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Telephone{% endtrans %}</th>
+                <td>{{ entity.telephone }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}pet.pets{% endtrans %}</th>
+                <td>
+                    <table class="table table-striped">
+                    {% for pet in entity.pets %}
+                        <tr><th>{% trans %}Id{% endtrans %}</th><td>{{ pet.id }}</td></tr>
+                        <tr><th>{% trans %}Name{% endtrans %}</th><td>{{ pet.name }}</td></tr>
+                        <tr><th>{% trans %}Birthdate{% endtrans %}</th><td>{{ pet.birthdate|date('d.m.Y') }}</td></tr>
+                        <tr><th>{% trans %}pettype.pettype{% endtrans %}</th><td>{% if pet.petType %}{{ pet.petType.name }}{% endif %}</td></tr>
+                        <tr>
+                            <td>
+                                <a href="{{ path('pet_edit', {'id': pet.id }) }}">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                    {% trans %}pet.pet{% endtrans %} {% trans %}edit{% endtrans %}
+                                </a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}visit.visits{% endtrans %}</th>
+                            <td>
+                            <table class="record_properties table table-striped">
+                        {% for visit in pet.visits %}
+                            <tr>
+                                <td>{{ visit.id }}</td>
+                                <td>{{ visit.date|date('d.m.Y')  }}</td>
+                                <td>{{ visit.description }}</td>
+                            </tr>
+                        {% endfor %}
+                            </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>
+                                <a href="{{ path('visit_new4pet', {'id': pet.id }) }}">
+                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                    {% trans %}add.visit{% endtrans %}
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                        <tr>
+                            <td>
+                                <a href="{{ path('pet_new4owner', {'id': entity.id }) }}">
+                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                    {% trans %}add.pet{% endtrans %}
+                                </a>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('owner') }}">
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span> {% trans %}back.to.list{% endtrans %}
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('owner_edit', { 'id': entity.id }) }}">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>{% trans %}Owner{% endtrans %}
+            {% trans %}edit{% endtrans %}
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

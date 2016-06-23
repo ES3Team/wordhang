@@ -1,0 +1,62 @@
+{% extends '::base.html.twig' %}
+
+{% block title -%}{% trans %}visit.visit{% endtrans %}{% endblock %}
+
+{% block body -%}
+    <h1>{% trans %}visit.visits{% endtrans %}</h1>
+
+    {# total items count #}
+    <div class="count">
+        {{ pagination.getTotalItemCount }}
+    </div>
+
+    <table class="records_list table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>{% trans %}actions{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pagination %}
+            <tr>
+                <td><a href="{{ path('visit_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{% if entity.date %}{{ entity.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.description }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('visit_show', { 'id': entity.id }) }}">
+                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                            {% trans %}show{% endtrans %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('visit_edit', { 'id': entity.id }) }}">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            {% trans %}edit{% endtrans %}
+                        </a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+        <ul>
+        <li>
+            <a href="{{ path('visit_new') }}">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                {% trans %}visit.visit{% endtrans %} {% trans %}create.new{% endtrans %}
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

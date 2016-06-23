@@ -1,0 +1,47 @@
+Previous: Previous
+Next: Next
+create.new: creation
+actions: Actions
+edit: edit
+show: show
+Delete: Delete
+Update: Update
+Create: Create
+language:
+  switcher: Choose Language
+  en: English
+  de: German
+Owner: Owner
+Id: Id
+First name: First name
+Last name: Last name
+Address: Address
+City: City
+Telephone: Telephone
+add:
+  pet: Add Pet
+  visit: Add Visit
+pet:
+  pet: Pet
+  pets: Pets
+Birthdate: Birthdate
+Pet type: Pet Type
+pettype:
+  pettype: PetType
+  pettypes: PetTypes
+Name: Name
+vet:
+  vet: Vet
+  vets: Vets
+visit:
+  visit: Visit
+  visits: Visits
+Description: Beschreibung
+Date: Datum
+specialty:
+  specialty: Specialty
+  specialties: Specialties
+back:
+  to:
+    list: Back to the list
+    owner: Back to the Owner
