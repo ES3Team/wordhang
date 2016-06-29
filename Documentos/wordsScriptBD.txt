@@ -1,0 +1,10 @@
+INSERT INTO `words`(`en_word`, `pt_word`, `tip`) VALUES ('banana', 'banana', 'The yellow crescent moon (edible)');
+INSERT INTO `words`(`en_word`, `pt_word`, `tip`) VALUES ('potato', 'batata', 'Movie character Toy Story (edible)');
+INSERT INTO `words`(`en_word`, `pt_word`, `tip`) VALUES ('apple', 'maça', 'Creation of Steve Jobs');
+INSERT INTO `words`(`en_word`, `pt_word`, `tip`) VALUES ('dog', 'cachorro', 'Pet');
+INSERT INTO `words`(`en_word`, `pt_word`, `tip`) VALUES ('cat', 'gato', 'Movie character Shrek');
+INSERT INTO `words`(`en_word`, `pt_word`, `tip`) VALUES ('monster', 'monstro', 'The terror of children when they turn out the lights');
+INSERT INTO `words`(`en_word`, `pt_word`, `tip`) VALUES ('fairy', 'fada', 'Rafael');
+INSERT INTO `words`(`en_word`, `pt_word`, `tip`) VALUES ('beer', 'cerveja', 'Golden liquid');
+INSERT INTO `words`(`en_word`, `pt_word`, `tip`) VALUES ('horse', 'cavalo', 'Animal that a prince normally rides on');
+INSERT INTO `words`(`en_word`, `pt_word`, `tip`) VALUES ('code', 'código', 'Konami');
