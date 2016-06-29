@@ -1,135 +1,101 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-            <!-- Fixed navbar -->
-            <!--        <nav class="navbar navbar-inverse navbar-fixed-top">
-                        <div class="container">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <a class="navbar-brand" href="#">Bootstrap theme</a>
-                            </div>
-                            <div id="navbar" class="navbar-collapse collapse">
-                                <ul class="nav navbar-nav">
-                                    <li class="active"><a href="#">Home</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#contact">Contact</a></li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Action</a></li>
-                                            <li><a href="#">Another action</a></li>
-                                            <li><a href="#">Something else here</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li class="dropdown-header">Nav header</li>
-                                            <li><a href="#">Separated link</a></li>
-                                            <li><a href="#">One more separated link</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>/.nav-collapse 
-                        </div>
-                    </nav>-->
+    <div class="container theme-showcase" role="main">
+        <div class="jumbotron">
+            <CENTER><img src="{{ asset('images/wordhang_logo.png') }}" width="65%"/></CENTER>
+        </div>
 
-            <div class="container theme-showcase" role="main">
-                <div class="jumbotron">
-                    <CENTER><img src="{{ asset('images/wordhang_logo.png') }}" width="65%"/></CENTER>
+        <div class="jumbotron quadro-negro">
+            <div class="row">
+                <!--<div class="col-md-8 col-lg-8 col-xs-8 col-md-offset-2 col-lg-offset-2 col-xs-offset-2">-->
+                <div class="col-md-3 col-lg-3 col-xs-3">
+                    <a href="" data-toggle="modal" data-target="#myModal" class="font-giz font-size-dica" title="Do you need help? Tip is here!">TIP</a>
                 </div>
-
-                <div class="jumbotron quadro-negro">
-                    <div class="row">
-                        <!--<div class="col-md-8 col-lg-8 col-xs-8 col-md-offset-2 col-lg-offset-2 col-xs-offset-2">-->
-                        <div class="col-md-3 col-lg-3 col-xs-3">
-                            <a href="" data-toggle="modal" data-target="#myModal" class="font-giz font-size-dica" title="Do you need help? Tip is here!">TIP</a>
-                        </div>
-                        <div class="col-md-6 col-lg-6 col-xs-6">
-                            <p class="text-align-center font-palavra-secreta font-color-white font-giz">W _ _ D _ _ N G</p>
-                        </div> 
-                        <div class="col-md-3 col-lg-3 col-xs-3">               
-                            <section id="heart"></section>   					
-                            <section id="heart" style="margin-left: 50px"></section>		
-                            <section id="heart" style="margin-left: 100px"></section>	
-                            <section id="heart" style="margin-left: 150px"></section>						
-                        </div>
-                        <!--</div>-->
-                    </div>
-                    <div class="row" style="margin-top: 50px;">
-                        <div class="col-md-8 col-lg-8 col-xs-8 col-md-offset-2 col-lg-offset-2 col-xs-offset-2">
-                            <img src="{{ asset('images/1.png') }}" width="50%"/>
-                        </div>
-                    </div>
-                    <div id="container" class="row font-giz">
-                        <ul id="keyboard">
-                            <li class="letter">A</li>
-                            <li class="letter">B</li>
-                            <li class="letter">C</li>
-                            <li class="letter" style="color: #1cd42c">D</li>
-                            <li class="letter">E</li>
-                            <li class="letter">F</li>
-                            <li class="letter" style="color: #1cd42c">G</li>
-                            <li class="letter">H</li>
-                            <li class="letter">I</li>
-                            <li class="letter">J</li>
-                            <li class="letter">K</li>
-                            <li class="letter">L</li>
-                            <li class="letter">M</li>		
-                            <li class="letter" style="color: #1cd42c">N</li>
-                            <li class="letter">O</li>
-                            <li class="letter">P</li>
-                            <li class="letter">Q</li>
-                            <li class="letter">R</li>
-                            <li class="letter">S</li>
-                            <li class="letter">T</li>
-                            <li class="letter">U</li>
-                            <li class="letter">V</li>
-                            <li class="letter" style="color: #1cd42c">W</li>
-                            <li class="letter">X</li>
-                            <li class="letter">Y</li>
-                            <li class="letter">Z</li>
-                        </ul>
-                    </div>
+                <div class="col-md-6 col-lg-6 col-xs-6">
+                    <p class="text-align-center font-palavra-secreta font-color-white font-giz">W _ _ D _ _ N G</p>
+                </div> 
+                <div class="col-md-3 col-lg-3 col-xs-3">               
+                    <section id="heart"></section>   					
+                    <section id="heart" style="margin-left: 50px"></section>		
+                    <section id="heart" style="margin-left: 100px"></section>	
+                    <section id="heart" style="margin-left: 150px"></section>						
                 </div>
+                <!--</div>-->
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-8 col-lg-8 col-xs-8 col-md-offset-2 col-lg-offset-2 col-xs-offset-2">
+                    <img src="{{ asset('images/1.png') }}" width="50%"/>
+                </div>
+            </div>
+            <div id="container" class="row font-giz">
+                <ul id="keyboard">
+                    <li class="letter">A</li>
+                    <li class="letter">B</li>
+                    <li class="letter">C</li>
+                    <li class="letter" style="color: #1cd42c">D</li>
+                    <li class="letter">E</li>
+                    <li class="letter">F</li>
+                    <li class="letter" style="color: #1cd42c">G</li>
+                    <li class="letter">H</li>
+                    <li class="letter">I</li>
+                    <li class="letter">J</li>
+                    <li class="letter">K</li>
+                    <li class="letter">L</li>
+                    <li class="letter">M</li>		
+                    <li class="letter" style="color: #1cd42c">N</li>
+                    <li class="letter">O</li>
+                    <li class="letter">P</li>
+                    <li class="letter">Q</li>
+                    <li class="letter">R</li>
+                    <li class="letter">S</li>
+                    <li class="letter">T</li>
+                    <li class="letter">U</li>
+                    <li class="letter">V</li>
+                    <li class="letter" style="color: #1cd42c">W</li>
+                    <li class="letter">X</li>
+                    <li class="letter">Y</li>
+                    <li class="letter">Z</li>
+                </ul>
+            </div>
+        </div>
 
-                <div id="myModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
-                        <!-- Modal content-->
-                        <div class="modal-content msg1">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title font-color-white font-giz" style="text-align: center">TIP</h4>
-                                <br>
-                                <h5 class="modal-title font-color-white font-giz">The secret word is a famous game word guessing</h5>
-                                <br>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close Tip</button>
-                                </div>
-                            </div>
+                <!-- Modal content-->
+                <div class="modal-content msg1">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title font-color-white font-giz" style="text-align: center">TIP</h4>
+                        <br>
+                        <h5 class="modal-title font-color-white font-giz">The secret word is a famous game word guessing</h5>
+                        <br>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close Tip</button>
                         </div>
                     </div>
                 </div>
-            </div> <!-- /container -->
+            </div>
+        </div>
+    </div> <!-- /container -->
 
-            <footer class="footer">
-                <div class="container">
-                    <p class="text-muted">Copyright 2016 - ES3Team - Engenharia de Software 3</p>
-                </div>
-            </footer>
-            
-            <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('js/keyboard.js') }}"></script>
-            <!-- Bootstrap core JavaScript
-            ================================================== -->
-            <!-- Placed at the end of the document so the pages load faster -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-            <script src="{{ asset('js/docs.min.js') }}"></script>
-            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-            <script src="{{ asset('js/ie10-viewport-bug-workaround.js') }}"></script>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">Copyright 2016 - ES3Team - Engenharia de Software 3</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/keyboard.js') }}"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/docs.min.js') }}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{ asset('js/ie10-viewport-bug-workaround.js') }}"></script>
 {% endblock %}
 
 {% block stylesheets %}
