@@ -1,35 +1,59 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>WordHang</title>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Welcome!{% endblock %} | PHP Petclinic</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-              integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-              crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/theme.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/kbStyle.css') }}">
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
-              integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX"
-              crossorigin="anonymous">
+        <script type="text/javascript">
+            function id(el) {
+                return document.getElementById(el);
+            }
+            function val(destino, valor) {
+                destino.value += valor;
+            }
+            var focus = false;
+            window.onload = function () {
 
-        <style>
-           li { list-style-type: none; }
-           .language_switcher ul li {
-                display: inline;
-           }
+
+                var botoes = id('teclado').getElementsByTagName('input');
+                for (var i = 0; i < botoes.length; i++) {
+                    botoes[i].onclick = function () {
+                        if (!focus) {
+                            alert('coloque o foco em algum input');
+                            exit();
+                        }
+
+                        val(id(focus), this.value);
+                        id(focus).focus();
+                    }
+                }
+
+                var inputs = id('area').getElementsByTagName('input');
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].onfocus = function () {
+                        focus = this.id;
+                    }
+                }
+                id('entrada_1').focus();
+            }
+        </script>
+        <style type="text/css">
+            * { margin: 0; padding: 0; border: 0; }
+            input { background: #transparent !important; border: 1px solid #ccc !important; padding: 2px !important;}
+            #teclado { width: 100%; }
+            #teclado fieldset { width: 300px !important; text-align: center !important; float: left !important; margin: 2px !important; }
+            #teclado #numbers { float: right !important; width: 80px !important; }
+            fieldset { margin: 5px !important; }
         </style>
-
-        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
-                integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
-                crossorigin="anonymous"></script>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
     <div class="container">
@@ -44,7 +68,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ path('homepage') }}">PHP Petclinic</a>
+                    <a class="navbar-brand" href="{{ path('homepage') }}">WordHang</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="petclinic-navbar-collapse-1">
