@@ -103,7 +103,7 @@ and open the template in the editor.
                 <div class="row">
                     <!--<div class="col-md-8 col-lg-8 col-xs-8 col-md-offset-2 col-lg-offset-2 col-xs-offset-2">-->
                     <div class="col-md-3 col-lg-3 col-xs-3">
-                        <a href="" class="font-giz font-size-dica" data-toggle="tooltip" title="Do you need help? Tip is here!">TIP</a>
+                        <a href="" data-toggle="modal" data-target="#myModal" class="font-giz font-size-dica" title="Do you need help? Tip is here!">TIP</a>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xs-6">
                         <p class="text-align-center font-palavra-secreta font-color-white font-giz">W _ _ D _ _ N G</p>
@@ -153,6 +153,24 @@ and open the template in the editor.
                 </div>
             </div>
 
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content msg1">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title font-color-white font-giz" style="text-align: center">TIP</h4>
+                            <br>
+                            <h5 class="modal-title font-color-white font-giz">The secret word is a famous game word guessing</h5>
+                            <br>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close Tip</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <script type="text/javascript" src="js/jquery.js"></script>
             <script type="text/javascript" src="js/keyboard.js"></script>
