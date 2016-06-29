@@ -1,12 +1,13 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: tw
  * Date: 18.10.15
  * Time: 21:07
  */
-
 // src/AppBundle/Entity/Owner.php
+
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -15,8 +16,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="owners")
  */
-class Owner
-{
+class Owner {
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -49,19 +50,12 @@ class Owner
      */
     protected $telephone;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Pet", mappedBy="owner")
-     **/
-    protected $pets;
-
-    public function __construct()
-    {
-        $this->pets = new \Doctrine\Common\Collections\ArrayCollection();
+    public function __construct() {
+        
     }
 
-    public function __toString()
-    {
-        return strval($this->getFirstName()." ".$this->getLastName());
+    public function __toString() {
+        return strval($this->getFirstName() . " " . $this->getLastName());
     }
 
     /**
@@ -69,8 +63,7 @@ class Owner
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -81,8 +74,7 @@ class Owner
      *
      * @return Owner
      */
-    public function setFirstName($firstName)
-    {
+    public function setFirstName($firstName) {
         $this->firstName = $firstName;
 
         return $this;
@@ -93,8 +85,7 @@ class Owner
      *
      * @return string
      */
-    public function getFirstName()
-    {
+    public function getFirstName() {
         return $this->firstName;
     }
 
@@ -105,8 +96,7 @@ class Owner
      *
      * @return Owner
      */
-    public function setLastName($lastName)
-    {
+    public function setLastName($lastName) {
         $this->lastName = $lastName;
 
         return $this;
@@ -117,8 +107,7 @@ class Owner
      *
      * @return string
      */
-    public function getLastName()
-    {
+    public function getLastName() {
         return $this->lastName;
     }
 
@@ -129,8 +118,7 @@ class Owner
      *
      * @return Owner
      */
-    public function setAddress($address)
-    {
+    public function setAddress($address) {
         $this->address = $address;
 
         return $this;
@@ -141,8 +129,7 @@ class Owner
      *
      * @return string
      */
-    public function getAddress()
-    {
+    public function getAddress() {
         return $this->address;
     }
 
@@ -153,8 +140,7 @@ class Owner
      *
      * @return Owner
      */
-    public function setCity($city)
-    {
+    public function setCity($city) {
         $this->city = $city;
 
         return $this;
@@ -165,8 +151,7 @@ class Owner
      *
      * @return string
      */
-    public function getCity()
-    {
+    public function getCity() {
         return $this->city;
     }
 
@@ -177,8 +162,7 @@ class Owner
      *
      * @return Owner
      */
-    public function setTelephone($telephone)
-    {
+    public function setTelephone($telephone) {
         $this->telephone = $telephone;
 
         return $this;
@@ -189,42 +173,8 @@ class Owner
      *
      * @return string
      */
-    public function getTelephone()
-    {
+    public function getTelephone() {
         return $this->telephone;
     }
 
-    /**
-     * Add pet
-     *
-     * @param \AppBundle\Entity\Pet $pet
-     *
-     * @return Owner
-     */
-    public function addPet(\AppBundle\Entity\Pet $pet)
-    {
-        $this->pets[] = $pet;
-
-        return $this;
-    }
-
-    /**
-     * Remove pet
-     *
-     * @param \AppBundle\Entity\Pet $pet
-     */
-    public function removePet(\AppBundle\Entity\Pet $pet)
-    {
-        $this->pets->removeElement($pet);
-    }
-
-    /**
-     * Get pets
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPets()
-    {
-        return $this->pets;
-    }
 }

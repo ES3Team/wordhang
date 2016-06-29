@@ -30,61 +30,7 @@
             <tr>
                 <th>{% trans %}Telephone{% endtrans %}</th>
                 <td>{{ entity.telephone }}</td>
-            </tr>
-            <tr>
-                <th>{% trans %}pet.pets{% endtrans %}</th>
-                <td>
-                    <table class="table table-striped">
-                    {% for pet in entity.pets %}
-                        <tr><th>{% trans %}Id{% endtrans %}</th><td>{{ pet.id }}</td></tr>
-                        <tr><th>{% trans %}Name{% endtrans %}</th><td>{{ pet.name }}</td></tr>
-                        <tr><th>{% trans %}Birthdate{% endtrans %}</th><td>{{ pet.birthdate|date('d.m.Y') }}</td></tr>
-                        <tr><th>{% trans %}pettype.pettype{% endtrans %}</th><td>{% if pet.petType %}{{ pet.petType.name }}{% endif %}</td></tr>
-                        <tr>
-                            <td>
-                                <a href="{{ path('pet_edit', {'id': pet.id }) }}">
-                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                                    {% trans %}pet.pet{% endtrans %} {% trans %}edit{% endtrans %}
-                                </a>
-                            </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>{% trans %}visit.visits{% endtrans %}</th>
-                            <td>
-                            <table class="record_properties table table-striped">
-                        {% for visit in pet.visits %}
-                            <tr>
-                                <td>{{ visit.id }}</td>
-                                <td>{{ visit.date|date('d.m.Y')  }}</td>
-                                <td>{{ visit.description }}</td>
-                            </tr>
-                        {% endfor %}
-                            </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td>
-                                <a href="{{ path('visit_new4pet', {'id': pet.id }) }}">
-                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                                    {% trans %}add.visit{% endtrans %}
-                                </a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                        <tr>
-                            <td>
-                                <a href="{{ path('pet_new4owner', {'id': entity.id }) }}">
-                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                                    {% trans %}add.pet{% endtrans %}
-                                </a>
-                            </td>
-                            <td></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
+            </tr>   
         </tbody>
     </table>
 
