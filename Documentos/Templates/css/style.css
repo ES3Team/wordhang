@@ -2916,8 +2916,9 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background: url('../images/background.jpg') !important;
-    background-size: cover !important;
+    /*background: url('../images/background.jpg') !important;*/
+    /*background-size: cover !important;*/
+    background: rgb(89, 140, 121) !important;
 }
 .footer {
     position: absolute;
@@ -2982,7 +2983,8 @@ code {
 }
 
 .font-giz{
-    font-family: 'eraserregular' !important; 
+    font-family: 'eraserregular' !important;
+    text-transform: uppercase;
 }
 
 .font-size-dica{
@@ -2990,18 +2992,19 @@ code {
 }
 /*alterações*/
 .msg1{
-  font-family: Verdana;
-  color: #1a1100;
-  background: #577269;
+    font-family: Verdana;
+    color: #1a1100;
+    /*background: #577269;*/
+    background: url('../images/background.jpg') !important;
 }
 
 .dismiss-button{
-  background: #ffffff;
-  border-radius: 5px;
-  font-family: Verdana;
-  font-size: 13px;
-  color: #1a1100;
-  height: 30px;
+    background: #ffffff;
+    border-radius: 5px;
+    font-family: Verdana;
+    font-size: 13px;
+    color: #1a1100;
+    height: 30px;
 }
 
 /*Coração Apaixonado do Rafael*/
@@ -3041,4 +3044,9 @@ code {
     -ms-transform-origin: 100% 100%;  
     -o-transform-origin: 100% 100%;  
     transform-origin : 100% 100%;  
+}
+
+.quadro-negro{
+    background: url('../images/background.jpg') !important;
+    border: 20px rgba(99, 52, 3, 0.85) solid !important;
 }
