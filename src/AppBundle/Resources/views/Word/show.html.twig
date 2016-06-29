@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block title -%}{% trans %}Word{% endtrans %}{% endblock %}
+
+{% block body -%}
+    <h1>{% trans %}Word{% endtrans %}</h1>
+
+    <table class="record_properties table table-striped">
+        <tbody>
+            <tr>
+                <th>{% trans %}Id{% endtrans %}</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}First name{% endtrans %}</th>
+                <td>{{ entity.enWord }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Last name{% endtrans %}</th>
+                <td>{{ entity.ptWord }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Tip{% endtrans %}</th>
+                <td>{{ entity.tip }}</td>
+            </tr> 
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('word') }}">
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span> {% trans %}back.to.list{% endtrans %}
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('word_edit', { 'id': entity.id }) }}">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>{% trans %}Word{% endtrans %}
+            {% trans %}edit{% endtrans %}
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

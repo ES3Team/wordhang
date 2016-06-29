@@ -11,7 +11,7 @@ language:
   switcher: Sprache einstellen
   en: Englisch
   de: Deutsch
-Owner: Besitzer
+Word: ALEMONBATATA
 Id: Id
 First name: Vorname
 Last name: Nachname
@@ -44,4 +44,4 @@ specialty:
 back:
   to:
     list: Zurück zur Liste
-    owner: Zurück zum Besitzer
+    word: VOLTANO PRO ALEMONBATATA

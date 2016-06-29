@@ -7,21 +7,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use AppBundle\Entity\Owner;
-use AppBundle\Form\OwnerType;
+use AppBundle\Entity\Word;
+use AppBundle\Form\WordType;
 
 /**
- * Owner controller.
+ * Word controller.
  *
- * @Route("/{_locale}/owner", defaults={"_locale"="en"}, requirements = { "_locale" = "en|de" })
+ * @Route("/{_locale}/word", defaults={"_locale"="en"}, requirements = { "_locale" = "en|de" })
  */
-class OwnerController extends Controller
+class WordController extends Controller
 {
 
     /**
-     * Lists all Owner entities.
+     * Lists all Word entities.
      *
-     * @Route("/", name="owner")
+     * @Route("/", name="word")
      * @Method("GET")
      * @Template()
      */
@@ -29,7 +29,7 @@ class OwnerController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AppBundle:Owner')->findAll();
+        $entities = $em->getRepository('AppBundle:Word')->findAll();
 
         $paginator  = $this->get('knp_paginator');
         $pagination= $paginator->paginate($entities,$request->query->getInt('page', 1)/*page number*/,5);
@@ -39,15 +39,15 @@ class OwnerController extends Controller
         );
     }
     /**
-     * Creates a new Owner entity.
+     * Creates a new Word entity.
      *
-     * @Route("/", name="owner_create")
+     * @Route("/", name="word_create")
      * @Method("POST")
-     * @Template("AppBundle:Owner:new.html.twig")
+     * @Template("AppBundle:Word:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = new Owner();
+        $entity = new Word();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -56,7 +56,7 @@ class OwnerController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('owner_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('word_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -66,16 +66,16 @@ class OwnerController extends Controller
     }
 
     /**
-     * Creates a form to create a Owner entity.
+     * Creates a form to create a Word entity.
      *
-     * @param Owner $entity The entity
+     * @param Word $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Owner $entity)
+    private function createCreateForm(Word $entity)
     {
-        $form = $this->createForm(new OwnerType(), $entity, array(
-            'action' => $this->generateUrl('owner_create'),
+        $form = $this->createForm(new WordType(), $entity, array(
+            'action' => $this->generateUrl('word_create'),
             'method' => 'POST',
         ));
 
@@ -85,15 +85,15 @@ class OwnerController extends Controller
     }
 
     /**
-     * Displays a form to create a new Owner entity.
+     * Displays a form to create a new Word entity.
      *
-     * @Route("/new", name="owner_new")
+     * @Route("/new", name="word_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new Owner();
+        $entity = new Word();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -103,9 +103,9 @@ class OwnerController extends Controller
     }
 
     /**
-     * Finds and displays a Owner entity.
+     * Finds and displays a Word entity.
      *
-     * @Route("/{id}", name="owner_show")
+     * @Route("/{id}", name="word_show")
      * @Method("GET")
      * @Template()
      */
@@ -113,10 +113,10 @@ class OwnerController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Owner')->find($id);
+        $entity = $em->getRepository('AppBundle:Word')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Owner entity.');
+            throw $this->createNotFoundException('Unable to find Word entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -128,9 +128,9 @@ class OwnerController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Owner entity.
+     * Displays a form to edit an existing Word entity.
      *
-     * @Route("/{id}/edit", name="owner_edit")
+     * @Route("/{id}/edit", name="word_edit")
      * @Method("GET")
      * @Template()
      */
@@ -138,10 +138,10 @@ class OwnerController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Owner')->find($id);
+        $entity = $em->getRepository('AppBundle:Word')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Owner entity.');
+            throw $this->createNotFoundException('Unable to find Word entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -155,16 +155,16 @@ class OwnerController extends Controller
     }
 
     /**
-    * Creates a form to edit a Owner entity.
+    * Creates a form to edit a Word entity.
     *
-    * @param Owner $entity The entity
+    * @param Word $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Owner $entity)
+    private function createEditForm(Word $entity)
     {
-        $form = $this->createForm(new OwnerType(), $entity, array(
-            'action' => $this->generateUrl('owner_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new WordType(), $entity, array(
+            'action' => $this->generateUrl('word_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -173,20 +173,20 @@ class OwnerController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Owner entity.
+     * Edits an existing Word entity.
      *
-     * @Route("/{id}", name="owner_update")
+     * @Route("/{id}", name="word_update")
      * @Method("PUT")
-     * @Template("AppBundle:Owner:edit.html.twig")
+     * @Template("AppBundle:Word:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Owner')->find($id);
+        $entity = $em->getRepository('AppBundle:Word')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Owner entity.');
+            throw $this->createNotFoundException('Unable to find Word entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -196,7 +196,7 @@ class OwnerController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('owner_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('word_edit', array('id' => $id)));
         }
 
         return array(
@@ -206,9 +206,9 @@ class OwnerController extends Controller
         );
     }
     /**
-     * Deletes a Owner entity.
+     * Deletes a Word entity.
      *
-     * @Route("/{id}", name="owner_delete")
+     * @Route("/{id}", name="word_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -218,21 +218,21 @@ class OwnerController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AppBundle:Owner')->find($id);
+            $entity = $em->getRepository('AppBundle:Word')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Owner entity.');
+                throw $this->createNotFoundException('Unable to find Word entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('owner'));
+        return $this->redirect($this->generateUrl('word'));
     }
 
     /**
-     * Creates a form to delete a Owner entity by id.
+     * Creates a form to delete a Word entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -241,7 +241,7 @@ class OwnerController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('owner_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('word_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

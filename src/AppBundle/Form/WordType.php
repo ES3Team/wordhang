@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class OwnerType extends AbstractType
+class WordType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,11 +15,9 @@ class OwnerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName')
-            ->add('lastName')
-            ->add('address')
-            ->add('city')
-            ->add('telephone')
+            ->add('enWord')
+            ->add('ptWord')
+            ->add('tip')
         ;
     }
     
@@ -29,7 +27,7 @@ class OwnerType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Owner'
+            'data_class' => 'AppBundle\Entity\Word'
         ));
     }
 
@@ -38,6 +36,6 @@ class OwnerType extends AbstractType
      */
     public function getName()
     {
-        return 'appbundle_owner';
+        return 'appbundle_word';
     }
 }

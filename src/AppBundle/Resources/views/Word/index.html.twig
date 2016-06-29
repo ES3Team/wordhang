@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block title -%}{% trans %}Word{% endtrans %}{% endblock %}
+
+{% block body -%}
+    <h1>{% trans %}Word{% endtrans %}</h1>
+
+    {# total items count #}
+    <div class="count">
+        {{ pagination.getTotalItemCount }}
+    </div>
+
+    <table class="records_list table table-striped">
+        <thead>
+            <tr>
+                <th>{% trans %}Id{% endtrans %}</th>
+                <th>{% trans %}En Word{% endtrans %}</th>
+                <th>{% trans %}Pt Word{% endtrans %}</th>
+                <th>{% trans %}Tip{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pagination %}
+            <tr>
+                <td><a href="{{ path('word_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.enWord }}</td>
+                <td>{{ entity.ptWord }}</td>
+                <td>{{ entity.tip }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+        <ul>
+        <li>
+            <a href="{{ path('word_new') }}">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                {% trans %}Word{% endtrans %} {% trans %}create.new{% endtrans %}
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

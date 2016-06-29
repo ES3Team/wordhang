@@ -11,7 +11,7 @@ language:
   switcher: Choose Language
   en: English
   de: German
-Owner: Owner
+Word: Word
 Id: Id
 First name: First name
 Last name: Last name
@@ -44,4 +44,4 @@ specialty:
 back:
   to:
     list: Back to the list
-    owner: Back to the Owner
+    word: Back to the Word
