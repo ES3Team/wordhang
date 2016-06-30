@@ -2912,23 +2912,9 @@ body {
 html {
     position: relative;
     min-height: 100%;
+    background-color: #FDF9E2;
+    background: url('../images/wallSoft.jpg') !important;
 }
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-    /*background: url('../images/background.jpg') !important;*/
-    /*background-size: cover !important;*/
-    background: rgb(89, 140, 121) !important;
-}
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    background-color: #f5f5f5;
-}
-
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -3050,5 +3036,6 @@ code {
 
 .quadro-negro{
     background: url('../images/background.jpg') !important;
-    border: 20px rgba(99, 52, 3, 0.85) solid !important;
+    border: 10px solid #9C673D;
+    
 }
