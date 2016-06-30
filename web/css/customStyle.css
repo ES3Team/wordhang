@@ -25,9 +25,15 @@
     padding: 50px 0px;
 }
 
+.hangman-size{
+    width: 30%;
+    height: auto;
+}
+
 .margin-header-item{
     margin: 10px;
     color: #F1E35E;
+    text-shadow: 2px 2px #81503D;
 }
 
 .font40{
