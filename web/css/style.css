@@ -5,13 +5,6 @@
   * Author URI: http://www.rollthemes.com
 */
 
-@import url("icomoon.css");
-@import url("socialico.css");
-@import url("flexslider.css");
-@import url("calendar.css");
-@import url("owl.carousel.css");
-@import url("shortcodes.css");
-
 /**
   * Reset
   * Repeatable Patterns  
@@ -3032,10 +3025,4 @@ code {
     -ms-transform-origin: 100% 100%;  
     -o-transform-origin: 100% 100%;  
     transform-origin : 100% 100%;  
-}
-
-.quadro-negro{
-    background: url('../images/background.jpg') !important;
-    border: 10px solid #9C673D;
-    
 }

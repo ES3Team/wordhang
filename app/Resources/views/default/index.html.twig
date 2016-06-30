@@ -1,87 +1,204 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container theme-showcase" role="main">
-        <div class="jumbotron">
-            <CENTER><img src="{{ asset('images/wordhang_logo.png') }}" width="65%"/></CENTER>
-        </div>
 
-        <div class="jumbotron quadro-negro">
-            <div class="row">
-                <!--<div class="col-md-8 col-lg-8 col-xs-8 col-md-offset-2 col-lg-offset-2 col-xs-offset-2">-->
-                <div class="col-md-3 col-lg-3 col-xs-3">
-                    <a href="" data-toggle="modal" data-target="#myModal" class="font-giz font-size-dica" title="Do you need help? Tip is here!">TIP</a>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xs-6">
-                    <p class="text-align-center font-palavra-secreta font-color-white font-giz">W _ _ D _ _ N G</p>
-                </div> 
-                <div class="col-md-3 col-lg-3 col-xs-3">               
-                    <section id="heart"></section>   					
-                    <section id="heart" style="margin-left: 50px"></section>		
-                    <section id="heart" style="margin-left: 100px"></section>	
-                    <section id="heart" style="margin-left: 150px"></section>						
-                </div>
-                <!--</div>-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <img class="padding-bot50" src="{{ asset('images/wordhang_logo.png') }}" />
             </div>
-            <div class="row" style="margin-top: 50px;">
-                <div class="col-md-8 col-lg-8 col-xs-8 col-md-offset-2 col-lg-offset-2 col-xs-offset-2">
-                    <img src="{{ asset('images/1.png') }}" width="50%"/>
-                </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid quadro-negro">
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <a href="" data-toggle="modal" data-target="#myModal" class="text-center font-giz font-size-dica font40" title="Do you need help? Tip is here!">TIP</a>
+                <br>
+                <a href="" data-toggle="modal" data-target="#victoryModal" class="text-center font-giz font-size-dica" title="Do you need help? Tip is here!">Test Victory</a>
+                <br>
+                <a href="" data-toggle="modal" data-target="#defeatModal" class="text-center font-giz font-size-dica" title="Do you need help? Tip is here!">Test Defeat</a>
             </div>
-            <div id="container" class="row font-giz">
-                <ul id="keyboard">
-                    <li class="letter">A</li>
-                    <li class="letter">B</li>
-                    <li class="letter">C</li>
-                    <li class="letter" style="color: #1cd42c">D</li>
-                    <li class="letter">E</li>
-                    <li class="letter">F</li>
-                    <li class="letter" style="color: #1cd42c">G</li>
-                    <li class="letter">H</li>
-                    <li class="letter">I</li>
-                    <li class="letter">J</li>
-                    <li class="letter">K</li>
-                    <li class="letter">L</li>
-                    <li class="letter">M</li>		
-                    <li class="letter" style="color: #1cd42c">N</li>
-                    <li class="letter">O</li>
-                    <li class="letter">P</li>
-                    <li class="letter">Q</li>
-                    <li class="letter">R</li>
-                    <li class="letter">S</li>
-                    <li class="letter">T</li>
-                    <li class="letter">U</li>
-                    <li class="letter">V</li>
-                    <li class="letter" style="color: #1cd42c">W</li>
-                    <li class="letter">X</li>
-                    <li class="letter">Y</li>
-                    <li class="letter">Z</li>
-                </ul>
+            <div class="col-lg-4">
+                <p class="text-center font40 font-color-white font-giz">W _ _ D _ _ N G</p>
+            </div>
+            <div class="col-lg-4">
+                <p class="text-center font40 font-color-white font-giz">Remaining attempts: <b>2</b></p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <img class="padding-bot50" src="{{ asset('images/3.png') }}"/>
+            </div>
+            <div class="col-lg-2">
 
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
+            </div>
+        </div>
+        <div class="container-fluid padding-bot-top50">
+            <div class="row font-giz">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <ul>
+                        <li class="botao-teclado">A</li>
+                        <li class="botao-teclado">B</li>
+                        <li class="botao-teclado">C</li>
+                        <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">D</li>
+                        <li class="botao-teclado" style="color: red; border-color: red;">E</li>
+                        <li class="botao-teclado">F</li>
+                        <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">G</li>
+                        <li class="botao-teclado">H</li>
+                        <li class="botao-teclado">I</li>
+                        <li class="botao-teclado">J</li>
+                        <li class="botao-teclado">K</li>
+                        <li class="botao-teclado">L</li>
+                        <li class="botao-teclado">M</li>		
+                    </ul>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+            <div class="row font-giz">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <ul>
+                        <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">N</li>
+                        <li class="botao-teclado">O</li>
+                        <li class="botao-teclado">P</li>
+                        <li class="botao-teclado">Q</li>
+                        <li class="botao-teclado">R</li>
+                        <li class="botao-teclado" style="color: red; border-color: red;">S</li>
+                        <li class="botao-teclado">T</li>
+                        <li class="botao-teclado">U</li>
+                        <li class="botao-teclado">V</li>
+                        <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">W</li>
+                        <li class="botao-teclado">X</li>
+                        <li class="botao-teclado">Y</li>
+                        <li class="botao-teclado">Z</li>	
+                    </ul>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+        <ul>
 
-                <!-- Modal content-->
-                <div class="modal-content msg1">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title font-color-white font-giz" style="text-align: center">TIP</h4>
-                        <br>
-                        <h5 class="modal-title font-color-white font-giz">The secret word is a famous game word guessing</h5>
-                        <br>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close Tip</button>
-                        </div>
+        </ul>
+    </div>
+
+    <!--Modal Dica -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content msg1">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title font-color-white font-giz" style="text-align: center">TIP</h4>
+                    <br>
+                    <h5 class="modal-title font-color-white font-giz">The best word guessing game!</h5>
+                    <br>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close Tip</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div> <!-- /container -->
+    </div>
 
+    <!--Modal Vitória -->
+    <div id="victoryModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content msg1">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title font-color-white font-giz">CONGRATULATIONS!</h4>
+                    <h2 class="modal-title font-color-white font-giz">YOU WON!</h2>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Derrota -->
+    <div id="defeatModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content msg1">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title font-color-white font-giz">Oops!</h4>
+                    <h2 class="modal-title font-color-white font-giz">TRY AGAIN!</h2>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Creditos -->
+    <div id="creditsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content msg1">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title font-color-white font-giz" style="text-align: center">Wordhang Project ESIII</h4>
+                    <br>
+                    <h5 class="modal-title font-color-white font-giz">Contributors: </h5>
+                    <br>
+                    <h5 class="modal-title font-color-white font-giz">Diego Peixoto</h5>
+                    <h5 class="modal-title font-color-white font-giz">Guilherme Matuella</h5>
+                    <h5 class="modal-title font-color-white font-giz">Matheus Souza</h5>
+                    <h5 class="modal-title font-color-white font-giz">Rafael Cardoso</h5>
+                    <h5 class="modal-title font-color-white font-giz">Tainara Specht</h5>
+                    <br>
+                    <a href="https://github.com/ES3Team/wordhang" class="font-giz font-size-dica" data-toggle="tooltip" 
+                       title="CLONE PROJECT">GITHUB PROJECT</a>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function id(el) {
+            return document.getElementById(el);
+        }
+        function val(destino, valor) {
+            destino.value += valor;
+        }
+        var focus = false;
+        window.onload = function () {
+
+
+            var botoes = id('teclado').getElementsByTagName('input');
+            for (var i = 0; i < botoes.length; i++) {
+                botoes[i].onclick = function () {
+                    if (!focus) {
+                        alert('coloque o foco em algum input');
+                        exit();
+                    }
+
+                    val(id(focus), this.value);
+                    id(focus).focus();
+                }
+            }
+
+            var inputs = id('area').getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].onfocus = function () {
+                    focus = this.id;
+                }
+            }
+            id('entrada_1').focus();
+        }
+    </script>
     <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/keyboard.js') }}"></script>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

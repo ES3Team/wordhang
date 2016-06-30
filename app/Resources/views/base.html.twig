@@ -5,79 +5,21 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/theme.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/kbStyle.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/customStyle.css') }}">
 
-        <script type="text/javascript">
-            function id(el) {
-                return document.getElementById(el);
-            }
-            function val(destino, valor) {
-                destino.value += valor;
-            }
-            var focus = false;
-            window.onload = function () {
-
-
-                var botoes = id('teclado').getElementsByTagName('input');
-                for (var i = 0; i < botoes.length; i++) {
-                    botoes[i].onclick = function () {
-                        if (!focus) {
-                            alert('coloque o foco em algum input');
-                            exit();
-                        }
-
-                        val(id(focus), this.value);
-                        id(focus).focus();
-                    }
-                }
-
-                var inputs = id('area').getElementsByTagName('input');
-                for (var i = 0; i < inputs.length; i++) {
-                    inputs[i].onfocus = function () {
-                        focus = this.id;
-                    }
-                }
-                id('entrada_1').focus();
-            }
-        </script>
-        <style type="text/css">
-            * { margin: 0; padding: 0; border: 0; }
-            input { background: #transparent !important; border: 1px solid #ccc !important; padding: 2px !important;}
-            #teclado { width: 100%; }
-            #teclado fieldset { width: 300px !important; text-align: center !important; float: left !important; margin: 2px !important; }
-            #teclado #numbers { float: right !important; width: 80px !important; }
-            fieldset { margin: 5px !important; }
-        </style>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-    <div class="container">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed"
-                            data-toggle="collapse" data-target="#petclinic-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ path('homepage') }}">WordHang</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="petclinic-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="{{ path('word') }}">{% trans %}Word{% endtrans %}</a></li>
-                    </ul>
-                </div>
+        <div class="main-container">
+            <div class="container-fluid margin-header-item">
+                <a class="text-center font-giz font-size-dica margin-header-item" href="{{ path('homepage') }}">WordHang</a>
+                <a class="text-center font-giz font-size-dica margin-header-item" href="{{ path('word') }}">{% trans %}Word{% endtrans %}</a>
+                <a href="" data-toggle="modal" data-target="#creditsModal" class="text-center font-giz font-size-dica margin-header-item" title="Do you need help? Tip is here!">About</a>
             </div>
-        </nav>
         {% block body %}{% endblock %}
         <div class="language_switcher">
             <ul>
@@ -96,7 +38,7 @@
                 </li>
             </ul>
         </div>
-        {% block javascripts %}{% endblock %}
-    </div>
-    </body>
+    {% block javascripts %}{% endblock %}
+</div>
+</body>
 </html>

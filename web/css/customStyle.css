@@ -1,0 +1,70 @@
+/*Configurando a fonte estilo de giz */
+@font-face {
+    font-family: 'eraserregular';
+    src: url('EraserRegular-webfont.eot');
+    src: url('EraserRegular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('EraserRegular-webfont.woff') format('woff'),
+        url('EraserRegular-webfont.ttf') format('truetype'),
+        url('EraserRegular-webfont.svg#eraserregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*Classes "utilitárias" */
+.font-giz{
+    font-family: 'eraserregular';
+    text-transform: uppercase;
+}
+
+.padding-bot50{
+    padding-bottom: 50px;
+}
+
+.padding-bot-top50{
+    padding: 50px 0px;
+}
+
+.margin-header-item{
+    margin: 10px;
+    color: #F1E35E;
+}
+
+.font40{
+    font-size: 40px !important;
+}
+/*Conteúdo geral*/
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.quadro-negro{
+    background: url('../images/background.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border: 5px solid #9C673D;
+}
+
+.botao-teclado{
+    border: white 1px solid;
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px 30px 0;
+    list-style: none;
+    float: left;
+}
+
+.botao-teclado:hover{
+    position: relative;
+    top: 1px;
+    left: 1px;
+    border-color: #e5e5e5;
+}
