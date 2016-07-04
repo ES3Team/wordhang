@@ -2,13 +2,19 @@
 
 namespace AppBundle\Controller;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use AppBundle\Entity\Word;
 use AppBundle\Form\WordType;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Word controller.
@@ -17,6 +23,25 @@ use AppBundle\Form\WordType;
  */
 class WordController extends Controller
 {
+
+
+    /**
+     * Word test.
+     *
+     * @Route("/", name="pls")
+     */
+    public function getAllWordsAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('AppBundle:Word')->findAll();
+        $serializer = new Serializer(
+            array(new GetSetMethodNormalizer(), new ArrayDenormalizer()),
+            array(new JsonEncoder())
+        );
+        $data = $serializer->serialize($entities, 'json');
+        return new Response($data);
+    }
 
     /**
      * Lists all Word entities.
@@ -38,6 +63,7 @@ class WordController extends Controller
             'pagination' => $pagination,
         );
     }
+
     /**
      * Creates a new Word entity.
      *
