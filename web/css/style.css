@@ -2903,10 +2903,10 @@ body {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-    position: relative;
-    min-height: 100%;
-    background-color: #FDF9E2;
-    background: url('../images/wallSoft.jpg') !important;
+    /*position: relative;*/
+    /*min-height: 100%;*/
+    /*background-color: #FDF9E2;*/
+    /*background: url('../images/brick2.png') !important;*/
 }
 
 /* Custom page CSS
