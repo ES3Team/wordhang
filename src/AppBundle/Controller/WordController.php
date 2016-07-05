@@ -24,25 +24,6 @@ use Symfony\Component\Serializer\Serializer;
 class WordController extends Controller
 {
 
-
-    /**
-     * Word test.
-     *
-     * @Route("/", name="pls")
-     */
-    public function getAllWordsAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('AppBundle:Word')->findAll();
-        $serializer = new Serializer(
-            array(new GetSetMethodNormalizer(), new ArrayDenormalizer()),
-            array(new JsonEncoder())
-        );
-        $data = $serializer->serialize($entities, 'json');
-        return new Response($data);
-    }
-
     /**
      * Lists all Word entities.
      *

@@ -7,173 +7,181 @@
             <div class="row">
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4">
-                    <input type="text" value="" ng-model="secretWord" />
-                    <button value="" ng-click="testeParse(secretWord)">PARSE</button>
-                </div>
-                <div class="col-lg-4"></div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4"></div>
-                <div class="col-lg-4">
                     <img class="padding-bot50" src="{{ asset('images/board1.png') }}" />
                 </div>
                 <div class="col-lg-4"></div>
             </div>
         </div>
-{#        <table>
-            {% for entity in pagination %}
-                <tr>
-                    <td><a href="{{ path('word_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.enWord }}</td>
-                    <td>{{ entity.ptWord }}</td>
-                    <td>{{ entity.tip }}</td>
-                </tr>
-            {% endfor %}
-        </table>#}
 
-    <div class="container-fluid quadro-negro">
-        <div class="row">
-            <div class="col-lg-4 text-center">
-                <a href="" data-toggle="modal" data-target="#myModal" class="text-center font-giz font-size-dica font40" title="Do you need help? Tip is here!">TIP</a>
-                <br>
-                <a href="" data-toggle="modal" data-target="#victoryModal" class="text-center font-giz font-size-dica" title="Do you need help? Tip is here!">Test Victory</a>
-                <br>
-                <a href="" data-toggle="modal" data-target="#defeatModal" class="text-center font-giz font-size-dica" title="Do you need help? Tip is here!">Test Defeat</a>
-            </div>
-            <div class="col-lg-4">
-                <p class="text-center font40 font-color-white font-giz">{[{ parsedWord }]}</p>
-            </div>
-            <div class="col-lg-4">
-                <p class="text-center font40 font-color-white font-giz">Remaining attempts: <b>2</b></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">
-                <img class="hangman-size padding-bot50" src="{{ asset('images/3.png') }}"/>
-            </div>
-            <div class="col-lg-2">
-
-            </div>
-        </div>
-        <div class="container-fluid padding-bot-top50">
-            <div class="row font-giz">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6">
-                    <ul>
-                        <li class="botao-teclado">A</li>
-                        <li class="botao-teclado">B</li>
-                        <li class="botao-teclado">C</li>
-                        <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">D</li>
-                        <li class="botao-teclado" style="color: red; border-color: red;">E</li>
-                        <li class="botao-teclado">F</li>
-                        <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">G</li>
-                        <li class="botao-teclado">H</li>
-                        <li class="botao-teclado">I</li>
-                        <li class="botao-teclado">J</li>
-                        <li class="botao-teclado">K</li>
-                        <li class="botao-teclado">L</li>
-                        <li class="botao-teclado">M</li>		
-                    </ul>
+        <div ng-model="startGame" ng-init="startGame = false" class="container-fluid quadro-negro">
+            <div ng-if="!startGame">
+                <div class="row">
+                    <div class="col-lg-12 text-center" style="padding: 300px 0px">
+                        <a href="" ng-click="initGame()" class="text-center font-giz font-size-dica font40">Start Game!</a>
+                    </div>
                 </div>
-                <div class="col-lg-3"></div>
             </div>
-            <div class="row font-giz">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6">
-                    <ul>
-                        <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">N</li>
-                        <li class="botao-teclado">O</li>
-                        <li class="botao-teclado">P</li>
-                        <li class="botao-teclado">Q</li>
-                        <li class="botao-teclado">R</li>
-                        <li class="botao-teclado" style="color: red; border-color: red;">S</li>
-                        <li class="botao-teclado">T</li>
-                        <li class="botao-teclado">U</li>
-                        <li class="botao-teclado">V</li>
-                        <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">W</li>
-                        <li class="botao-teclado">X</li>
-                        <li class="botao-teclado">Y</li>
-                        <li class="botao-teclado">Z</li>	
-                    </ul>
+            <div ng-if="startGame">
+                <div class="row">
+                    <div class="col-lg-4 text-center">
+                        <a href="" data-toggle="modal" data-target="#myModal" class="text-center font-giz font-size-dica font40" title="Do you need help? Tip is here!">TIP</a>
+                        <br>
+                        <a href="" data-toggle="modal" data-target="#victoryModal" class="text-center font-giz font-size-dica">Test Victory</a>
+                        <br>
+                        <a href="" data-toggle="modal" data-target="#defeatModal" class="text-center font-giz font-size-dica">Test Defeat</a>
+                        <br>
+                        <a href="" data-toggle="modal" data-target="#wordModal" class="text-center font-giz font-size-dica">Show Secret Word</a>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="text-center font40 font-color-white font-giz" style="padding-top: 70px">{[{ parsedWord }]}</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="text-center font40 font-color-white font-giz">Remaining attempts: <b>2</b></p>
+                    </div>
                 </div>
-                <div class="col-lg-3"></div>
-            </div>
-        </div>
-        <ul>
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
+                        <img class="hangman-size padding-bot50" src="{{ asset('images/3.png') }}"/>
+                    </div>
+                    <div class="col-lg-2">
 
-        </ul>
-    </div>
-
-    <!--Modal Dica -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content msg1">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title font-color-white font-giz" style="text-align: center">TIP</h4>
-                    <br>
-                    <h5 class="modal-title font-color-white font-giz">The best word guessing game!</h5>
-                    <br>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close Tip</button>
+                    </div>
+                </div>
+                <div class="container-fluid padding-bot-top50">
+                    <div class="row font-giz">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <ul>
+                                <li class="botao-teclado">A</li>
+                                <li class="botao-teclado">B</li>
+                                <li class="botao-teclado">C</li>
+                                <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">D</li>
+                                <li class="botao-teclado" style="color: red; border-color: red;">E</li>
+                                <li class="botao-teclado">F</li>
+                                <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">G</li>
+                                <li class="botao-teclado">H</li>
+                                <li class="botao-teclado">I</li>
+                                <li class="botao-teclado">J</li>
+                                <li class="botao-teclado">K</li>
+                                <li class="botao-teclado">L</li>
+                                <li class="botao-teclado">M</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                    <div class="row font-giz">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <ul>
+                                <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">N</li>
+                                <li class="botao-teclado">O</li>
+                                <li class="botao-teclado">P</li>
+                                <li class="botao-teclado">Q</li>
+                                <li class="botao-teclado">R</li>
+                                <li class="botao-teclado" style="color: red; border-color: red;">S</li>
+                                <li class="botao-teclado">T</li>
+                                <li class="botao-teclado">U</li>
+                                <li class="botao-teclado">V</li>
+                                <li class="botao-teclado" style="color: limegreen; border-color: limegreen;">W</li>
+                                <li class="botao-teclado">X</li>
+                                <li class="botao-teclado">Y</li>
+                                <li class="botao-teclado">Z</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--Modal Vitória -->
-    <div id="victoryModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content msg1">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title font-color-white font-giz">CONGRATULATIONS!</h4>
-                    <h2 class="modal-title font-color-white font-giz">YOU WON!</h2>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Play Again</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Modal Derrota -->
-    <div id="defeatModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content msg1">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title font-color-white font-giz">Oops!</h4>
-                    <h2 class="modal-title font-color-white font-giz">TRY AGAIN!</h2>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Play Again</button>
+        <!--Modal Dica -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content msg1">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title font-color-white font-giz" style="text-align: center">TIP</h4>
+                        <br>
+                        <h5 class="modal-title font-color-white font-giz">The best word guessing game!</h5>
+                        <br>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close Tip</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--Modal Creditos -->
-    <div id="creditsModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content msg1">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title font-color-white font-giz" style="text-align: center">Wordhang Project ESIII</h4>
-                    <br>
-                    <h5 class="modal-title font-color-white font-giz">Contributors: </h5>
-                    <br>
-                    <h5 class="modal-title font-color-white font-giz">Diego Peixoto</h5>
-                    <h5 class="modal-title font-color-white font-giz">Guilherme Matuella</h5>
-                    <h5 class="modal-title font-color-white font-giz">Matheus Souza</h5>
-                    <h5 class="modal-title font-color-white font-giz">Rafael Cardoso</h5>
-                    <h5 class="modal-title font-color-white font-giz">Tainara Specht</h5>
-                    <br>
-                    <a href="https://github.com/ES3Team/wordhang" class="font-giz font-size-dica" data-toggle="tooltip" 
-                       title="CLONE PROJECT">GITHUB PROJECT</a>
+        <!--Modal Vitória -->
+        <div id="victoryModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content msg1">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title font-color-white font-giz">CONGRATULATIONS!</h4>
+                        <h2 class="modal-title font-color-white font-giz">YOU WON!</h2>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Play Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Modal Derrota -->
+        <div id="defeatModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content msg1">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title font-color-white font-giz">Oops!</h4>
+                        <h2 class="modal-title font-color-white font-giz">TRY AGAIN!</h2>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Play Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Modal Creditos -->
+        <div id="creditsModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content msg1">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title font-color-white font-giz" style="text-align: center">Wordhang Project ESIII</h4>
+                        <br>
+                        <h5 class="modal-title font-color-white font-giz">Contributors: </h5>
+                        <br>
+                        <h5 class="modal-title font-color-white font-giz">Diego Peixoto</h5>
+                        <h5 class="modal-title font-color-white font-giz">Guilherme Matuella</h5>
+                        <h5 class="modal-title font-color-white font-giz">Matheus Souza</h5>
+                        <h5 class="modal-title font-color-white font-giz">Rafael Cardoso</h5>
+                        <h5 class="modal-title font-color-white font-giz">Tainara Specht</h5>
+                        <br>
+                        <a href="https://github.com/ES3Team/wordhang" class="font-giz font-size-dica" data-toggle="tooltip"
+                           title="CLONE PROJECT">GITHUB PROJECT</a>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Modal Secret Word -->
+        <div id="wordModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content msg1">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title font-color-white font-giz">Em inglês: {[{ randomWord.enWord }]}</h4>
+                        <h4 class="modal-title font-color-white font-giz">Em português: {[{ randomWord.ptWord }]}</h4>
+                        <h4 class="modal-title font-color-white font-giz">Dica: {[{ randomWord.tip }]}</h4>
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close</button>
                     </div>
@@ -188,7 +196,13 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Funções a serem utilizadas no Angular -->
     <script type="text/javascript">
-
+        function parseWord(word) {
+            var parsedWord = "";
+            for (i = 0; i < word.length; i++) {
+                parsedWord += "_ ";
+            }
+            return parsedWord;
+        };
     </script>
     <!-- Configuração do Angular -->
     <script type="text/javascript">
@@ -196,14 +210,17 @@
             $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
         });
 
-        app.controller('hangmanGameController', function ($scope) {
+        app.controller('hangmanGameController', function ($scope, $http) {
 
-            $scope.testeParse = function testeParse(word) {
-                $scope.parsedWord = "";
-                for (i = 0; i < word.length; i++) {
-                    $scope.parsedWord += "_ ";
-                }
-            };
+            $http.get("http://127.0.0.1:8000/en/allWords")
+            .then(function(response) {
+                $scope.randomWord = response.data[Math.floor(Math.random() * response.data.length)];
+                $scope.parsedWord = parseWord($scope.randomWord.enWord);
+            });
+
+            $scope.initGame = function initGame(){
+                $scope.startGame = true;
+            }
         });
     </script>
 {% endblock %}

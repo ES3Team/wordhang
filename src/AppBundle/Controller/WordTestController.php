@@ -15,26 +15,35 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use AppBundle\Entity\Word;
 use AppBundle\Form\WordType;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Get all words (test purpose).
  *
  * @Route("/{_locale}/allWords", defaults={"_locale"="en"}, requirements = { "_locale" = "en|de" })
  */
-class WordTest extends Controller
+class WordTestController extends Controller
 {
     /**
-     * @Route("/", name="allWords")
+     * Word test.
+     *
+     * @Route("/", name="teste")
      * @Method("GET")
+     * @Template()
      */
-    public function indexAction()
+    public function getAllWordsAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AppBundle:Word')->findAll();
-        $response = new Response(json_encode(array($entities)));
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response;
+        $serializer = new Serializer(
+            array(new GetSetMethodNormalizer(), new ArrayDenormalizer()),
+            array(new JsonEncoder())
+        );
+        $data = $serializer->serialize($entities, 'json');
+        return new Response($data);
     }
 }
