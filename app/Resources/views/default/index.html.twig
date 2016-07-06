@@ -103,7 +103,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title font-color-white font-giz" style="text-align: center">TIP</h4>
                         <br>
-                         <h4 class="modal-title font-color-white font-giz">TIP: {[{ randomWord.tip }]}</h4>
+                        <h4 class="modal-title font-color-white font-giz">TIP: {[{ randomWord.tip }]}</h4>
                         <br>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Close Tip</button>
@@ -121,6 +121,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title font-color-white font-giz">CONGRATULATIONS!</h4>
                         <h2 class="modal-title font-color-white font-giz">YOU WON!</h2>
+                        <h4 class="modal-title font-color-white font-giz">The word in Portuguese is: {[{ randomWord.ptWord }]}</h4>            
                     </div>
 
                     <div class="modal-footer">
@@ -138,6 +139,9 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title font-color-white font-giz">Oops!</h4>
                         <h2 class="modal-title font-color-white font-giz">TRY AGAIN!</h2>
+                        <br>
+                        <h4 class="modal-title font-color-white font-giz">The English word was: {[{ randomWord.enWord }]}</h4>    
+                        <h4 class="modal-title font-color-white font-giz">The Portuguese word was: {[{ randomWord.ptWord }]}</h4>    
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default dismiss-button" data-dismiss="modal">Play Again</button>
@@ -196,13 +200,14 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Funções a serem utilizadas no Angular -->
     <script type="text/javascript">
-        function parseWord(word) {
-            var parsedWord = "";
-            for (i = 0; i < word.length; i++) {
-                parsedWord += "_ ";
-            }
-            return parsedWord;
-        };
+function parseWord(word) {
+    var parsedWord = "";
+    for (i = 0; i < word.length; i++) {
+        parsedWord += "_ ";
+    }
+    return parsedWord;
+}
+;
     </script>
     <!-- Configuração do Angular -->
     <script type="text/javascript">
@@ -214,12 +219,12 @@
             $scope.missesAllowed = 4;
 
             $http.get("http://127.0.0.1:8000/en/allWords")
-            .then(function(response) {
-                $scope.randomWord = response.data[Math.floor(Math.random() * response.data.length)];
-                $scope.parsedWord = parseWord($scope.randomWord.enWord);
-            });
+                    .then(function (response) {
+                        $scope.randomWord = response.data[Math.floor(Math.random() * response.data.length)];
+                        $scope.parsedWord = parseWord($scope.randomWord.enWord);
+                    });
 
-            $scope.initGame = function initGame(){
+            $scope.initGame = function initGame() {
                 $scope.startGame = true;
             }
         });
